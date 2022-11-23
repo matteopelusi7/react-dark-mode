@@ -6,10 +6,31 @@ import Articolo from "./Articolo";
 // returna il suo valore o di default return 'light-mode'
 
 function App() {
+
+  const [theme, setTheme] = useState('light-mode');
+
+  const cambiaTema = () => {
+    if(theme === 'light-mode') {
+      setTheme('dark-mode')
+    } else {
+      setTheme('light-mode')
+    }
+  }
+
+  useEffect(() => {
+    document.documentElement.className = theme
+  },[theme])
+  
+
   return (
     <section className="section-center">
       <div className="container">
-        <h2>DARK MODE APP</h2>
+        <button className="btn" onClick={cambiaTema}>Cambia</button>
+        <section className="article-section">
+          {
+            data.map(el => <Articolo key={el.id} {...el} />)
+          }
+        </section>
       </div>
     </section>
   );
