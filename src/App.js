@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import data from "./data";
+import Articolo from "./Articolo";
+
+//Funzione che se presente 'Theme' nel localStorage
+// returna il suo valore o di default return 'light-mode'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="section-center">
+      <div className="container">
+        <h2>DARK MODE APP</h2>
+      </div>
+    </section>
   );
 }
 
